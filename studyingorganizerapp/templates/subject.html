@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Subject|Studying Organizer</title>
+</head>
+<body>
+
+	<div>
+		<a href="/subject/{{subject.id}}/"><h4>{{subject.name}}</h4></a>
+		<ul>	
+		{% for assignment in subject.assignment_set.all %}
+			<li>{{assignment.title}} <input type="checkbox" name="is_done" {% if assignment.is_finished %}checked{% endif %}></li>		
+		{% endfor %}
+		</ul>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home|Studying Organizer</title>
+</head>
+<body>
+{% for semester in semesters %}
+	<div>
+		<a href="/semester/{{semester.id}}/"><h4>{{semester.name}}</h4></a>
+	</div>	
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>To Do List</title>
+	<style type="text/css">
+		form{
+			display: inline;
+		}
+		.done{
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+<body>
+{% for tdl in to_do_lists %}
+	<div>
+	<a href="/tdl/{{tdl.id}}"><h4>{{tdl.name}}</h4></a>
+	<ul>	
+	{% for item in tdl.tdlitem_set.all %}
+		<li class="tdlitem {% if item.done == True %}done{% endif %}">{{item.text}}
+			<form method="post" action="done/">
+				{% csrf_token %}
+				<input type="hidden" name="id" value="{{item.id}}">
+				<button type="submit">Done</button>
+			</form>
+		</li>		
+	{% endfor %}
+	</ol>
+	</div>	
+{% endfor %}
+<div>
+	<h4>Create new entity</h4>
+	<form method="post">
+		{% csrf_token %}
+		{{create_tdl_form.as_p}}
+		<button type="submit">Submit</button>
+	</form>
+</div>	
+
+</body>
+</html>
