@@ -8,7 +8,7 @@
 <body>
 
 	<div>
-		<a href="/semester/{{semester.id}}/"><h4>{{semester.name}}</h4></a>
+		<h4>{{semester.name}}</h4></a>
 		<ul>	
 		{% for subject in semester.subject_set.all %}
 			<li><a href="/subject/{{subject.id}}/">{{subject.name}}</a></li>		

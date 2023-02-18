@@ -14,5 +14,5 @@ def semester(request, semester_id):
 
 # View subject and all assignments in it
 def subject(request, subject_id):
-	current_subject = Semester.objects.get(id = subject_id)
+	current_subject = Subject.objects.get(id = subject_id)
 	return render(request, "subject.html", {"subject": current_subject})

@@ -8,7 +8,7 @@
 <body>
 
 	<div>
-		<a href="/subject/{{subject.id}}/"><h4>{{subject.name}}</h4></a>
+		<h4>{{subject.name}}</h4>
 		<ul>	
 		{% for assignment in subject.assignment_set.all %}
 			<li>{{assignment.title}} <input type="checkbox" name="is_done" {% if assignment.is_finished %}checked{% endif %}></li>		
