@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Deadlines|Studying Organizer{% endblock %}
+{% block main %}
+	<div>
+		<h4>Deadlines</h4>
+		<ul>
+		{% for assignment in assignments %}
+			<li>{{assignment.title}} <input type="checkbox" name="is_done" {% if assignment.is_finished %}checked{% endif %}></li>		
+		{% endfor %}
+		</ul>
+		Completion score: {{completion_score}}%
+	</div>
+{% endblock %}
