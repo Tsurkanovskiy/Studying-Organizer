@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Semester|Studying Organizer</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
+{% block title %}Semester|Studying Organizer{% endblock %}
+{% block main %}
 	<div>
 		<h4>{{semester.name}}</h4></a>
 		<ul>	
@@ -15,6 +10,4 @@
 		{% endfor %}
 		</ul>
 	</div>
-
-</body>
-</html>
+{% endblock %}
